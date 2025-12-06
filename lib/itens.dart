@@ -20,6 +20,13 @@ class Resultado extends StatelessWidget {
               color: Color.fromARGB(255, 203, 152, 1),
             ),
           ),
+
+          const SizedBox(height: 20),
+
+          Text(
+            'Reiniciar',
+            style: TextStyle(fontSize: 25),
+          ),
         ],
       ),
     );

@@ -7,4 +7,3 @@ class PerguntaRespostas {
     required this.respostas,
   });
 }
-
