@@ -1,33 +1,43 @@
 import 'package:flutter/material.dart';
 
-class Resultado extends StatelessWidget {
-  const Resultado(this.respostas, this.reiniciar, {super.key});
+class Itens extends StatelessWidget {
+  final String pergunta;
+  final String resposta;
 
-  final List respostas;
-  final void Function() reiniciar;
+  const Itens({
+    super.key,
+    required this.pergunta,
+    required this.resposta,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        children: [
-          Text(
-            "Respostas",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 203, 152, 1),
-            ),
+      child: Card(
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                pergunta,
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.indigo,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                resposta.toLowerCase(),
+                style: const TextStyle(fontSize: 20),
+              ),
+              const SizedBox(height: 18),
+            ],
           ),
-
-          const SizedBox(height: 20),
-
-          Text(
-            'Reiniciar',
-            style: TextStyle(fontSize: 25),
-          ),
-        ],
+        ),
       ),
     );
   }
